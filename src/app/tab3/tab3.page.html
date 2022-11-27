@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Menu 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Menu 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="divGastos">
+    <ion-row class="label">
+        <ion-label class="label-padrao gastos">Calcular</ion-label>
+    </ion-row>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Produto</ion-label>
+        <ion-label>Valor</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div *ngFor="let controle of arrCalculo">
+      <ion-list>
+        <ion-item>
+          <ion-label>{{controle.produto}}</ion-label>
+          <ion-label>R${{controle.valorTotal}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

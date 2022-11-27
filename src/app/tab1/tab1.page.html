@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Menu 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="adicionaConvidado()">
+    <ion-row class="label">
+        <ion-label class="label-padrao">Adicionar uma lista de convidados</ion-label>
+    </ion-row>
+
+    <ion-row class="row">
+        <ion-item class="input-padrao">
+            <ion-input name="convidado" type="text" [(ngModel)]="convidado" ngModel required></ion-input>
+        </ion-item>
+    </ion-row>
+
+    <ion-row class="div" style="height: 60px;">
+      <ion-button class="button-entrar" type="submit" [disabled]="!convidado" expand="block">
+          ADICIONAR
+      </ion-button>
+    </ion-row>
+  </form>
+
+  <div class="divConvidados">
+    <ion-row class="label">
+        <ion-label class="label-padrao convidados">Convidados</ion-label>
+    </ion-row>
+
+    <div *ngFor="let convidados of arrConvidados">
+      <ion-list>
+        <ion-item>
+          <ion-label>{{convidados.convidados}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

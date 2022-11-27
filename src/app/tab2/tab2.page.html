@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Menu 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="controleGastos()">
+    <ion-row class="label">
+        <ion-label class="label-padrao">Controle de gastos</ion-label>
+    </ion-row>
+
+    <ion-row class="row">
+        <ion-item class="input-padrao">
+            <ion-input name="produto" type="text" [(ngModel)]="produto" placeholder="Produto" ngModel required></ion-input>
+        </ion-item>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-item class="input-padrao">
+          <ion-input name="preco" type="number" [(ngModel)]="preco" placeholder="Preço" ngModel required></ion-input>
+        </ion-item>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-item class="input-padrao">
+          <ion-input name="quantidade" type="number" [(ngModel)]="quantidade" placeholder="Quantidade" ngModel required></ion-input>
+        </ion-item>
+    </ion-row>
+
+    <ion-row class="div" style="height: 60px;">
+      <ion-button class="button-entrar" type="submit" [disabled]="!preco || !produto || !quantidade" expand="block">
+          ADICIONAR
+      </ion-button>
+    </ion-row>
+  </form>
+
+  <div class="divGastos">
+    <ion-row class="label">
+        <ion-label class="label-padrao gastos">Gastos</ion-label>
+    </ion-row>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Produto</ion-label>
+        <ion-label>Preço</ion-label>
+        <ion-label>Quantidade</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div *ngFor="let controle of arrControle">
+      <ion-list>
+        <ion-item>
+          <ion-label>{{controle.produto}}</ion-label>
+          <ion-label>R${{controle.preco}}</ion-label>
+          <ion-label>{{controle.qtd}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
