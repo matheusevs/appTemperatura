@@ -1,66 +1,155 @@
-:root {
-    --perfil-color-fundo1: #0275d8;
+/* Geral */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
 }
 
-.label-padrao {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 0;
-    margin-left: 11%;
-}
-
-.input-padrao {
-    width: 80%;
-    font-size: 16px;
-    color: #161616;
-    letter-spacing: 0;
-    font-weight: 600;
-    border-radius: 4px;
-    --background: #d9d9d9;
-    --highlight-color-focused: transparent;
-    --highlight-color-valid: transparent;
-    --highlight-color-invalid: transparent;
-}
-
-.row {
-    width: 100%;
-    text-align: center;
+body {
+    background: linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%);
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+}
+
+.hide {
+    display: none !important;
+}
+
+.container {
+    background-color: #5c54ed;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2rem;
+    color: #fdfdfd;
+    border-radius: 1rem;
+    max-width: 400px;
+}
+
+/* Form */
+.form h3 {
+    margin-bottom: 1rem;
+}
+
+.form-input-container {
+    display: flex;
+}
+
+.form input {
+    padding: 0.8rem;
+    border: none;
+    flex: 1;
+    border-radius: 4px;
+}
+
+.form button {
+    padding: 0.8rem;
+    min-width: 50px;
+    margin-left: 8px;
+    background-color: #8dd0f5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Clima */
+    #weather-data,
+    #error-message,
+    #loader,
+    #suggestions {
+    border-top: 1px solid #fff;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+#weather-data h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+#weather-data h2 i {
+    font-size: 1rem;
+}
+
+#weather-data span {
+    margin: 0.6rem;
+}
+
+#temperature {
+    font-size: 4rem;
+}
+
+#country {
+    height: 15px;
+}
+
+#description-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6rem 0;
+}
+
+#description {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#details-container #umidity {
+    border-right: 1px solid #fff;
+    margin: 0.6rem;
+    padding: 0.6rem;
+}
+
+/* Loader */
+#loader i {
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sugestões */
+#suggestions {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.label {
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-size: 14px;
+#suggestions button {
+    min-width: 150px;
+    margin: 0.8rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 10rem;
+    border: none;
+    background-color: #8dd0f5;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.8;
+    transition: 0.4s;
 }
 
-.button-entrar {
-    --background: var(#0275d8, 100%);
-    --background-focused: var(#0275d8, 100%);
-    --background-hover: var(#0275d8, 100%);
-    border-radius: 4px;
-    width: 80%;
-    font-size: 16px;
-    color: var(#fff, 100%);
-    letter-spacing: 0;
-    text-align: center;
-    text-transform: inherit;
-    font-weight: 600;
-    height: 45px;
-    margin-left: 10%;
-    margin-top: 10px;
+#suggestions button:hover {
+    opacity: 1;
 }
 
-ion-button.button-entrar.md.button.button-block.button-solid.ion-activatable.ion-focusable.hydrated.button-disabled {
-    --background: #cccccc;
-}
-
-.divConvidados{
-    padding-top: 50px;
-}
-
-.convidados{
-    padding-left: 25%;
+input#city-input{
+    color: black;
 }
